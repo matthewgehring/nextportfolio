@@ -1,131 +1,92 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import React, { useState } from 'react';
+import { WidthProvider, Responsive } from 'react-grid-layout';
+import 'react-grid-layout/css/styles.css';
+import 'react-resizable/css/styles.css';
+import styles from '../styles/Home.module.css'
 
-export default function Home() {
+const ResponsiveGridLayout = WidthProvider(Responsive);
+
+const PortfolioPage = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const [activeButton, setActiveButton] = useState('about');
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const handleButtonClick = (buttonName) => {
+    setActiveButton(buttonName);
+  };
+
+  const layoutDict = {
+    about:[
+      { i: 'intro', x: 0, y: 0, w: 3, h: 1 },
+      { i: 'project1', x: 6, y: 0, w: 2, h: 3 },
+      { i: 'project2', x: 0, y: 2, w: 2, h: 3 },
+      { i: 'project3', x: 6, y: 2, w: 2, h: 3 },
+      { i: 'darkModeToggle', x: 0, y: 4, w: 1, h: 1 },
+      { i: 'contact', x: 3, y: 4, w: 3, h: 1 },
+      { i: 'socialMedia', x: 6, y: 4, w: 3, h: 1 },
+    ],
+    projects:[
+      { i: 'intro', x: 0, y: 5, w: 3, h: 1 },
+      { i: 'project1', x: 0, y: 0, w: 2, h: 3 },
+      { i: 'project2', x: 3, y: 0, w: 2, h: 3 },
+      { i: 'project3', x: 3, y: 0, w: 2, h: 3 },
+      { i: 'darkModeToggle', x: 0, y: 4, w: 1, h: 1 },
+      { i: 'contact', x: 5, y: 4, w: 3, h: 1 },
+      { i: 'socialMedia', x: 6, y: 4, w: 3, h: 1 },
+    ]
+  }
+
+  const layouts = {
+    lg: layoutDict[activeButton],
+  };
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <div className={styles.grid}>
+    <div className={darkMode ? styles.darkMode : styles.lightMode}>
+    <div className={styles.navbar}>
+        <div>Tu nombre</div>
+        <div className={styles.navButtons}>
+          <button onClick={() => handleButtonClick('about')}>About</button>
+          <button onClick={() => handleButtonClick('projects')}>Projects</button>
+          <button onClick={() => handleButtonClick('contact')}>Contact</button>
         </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family:
-            Menlo,
-            Monaco,
-            Lucida Console,
-            Liberation Mono,
-            DejaVu Sans Mono,
-            Bitstream Vera Sans Mono,
-            Courier New,
-            monospace;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            Segoe UI,
-            Roboto,
-            Oxygen,
-            Ubuntu,
-            Cantarell,
-            Fira Sans,
-            Droid Sans,
-            Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+      </div>
+      <ResponsiveGridLayout className="layout" layouts={layouts} isResizable={false} cols={{ lg: 6, md: 10, sm: 6, xs: 4, xxs: 2 }}>
+        <div className={styles.card} key="intro">
+          <h2>Intro</h2>
+          <p>Welcome to my portfolio!</p>
+        </div>
+        <div className={styles.card} key="project1">
+          <h2>Project 1</h2>
+          <p>Description of project 1.</p>
+        </div>
+        <div className={styles.card} key="project2">
+          <h2>Project 2</h2>
+          <p>Description of project 2.</p>
+        </div>
+        <div className={styles.card} key="project3">
+          <h2>Project 3</h2>
+          <p>Description of project 3.</p>
+        </div>
+        <div className={styles.card} key="darkModeToggle">
+          <h2>Dark Mode</h2>
+          <button onClick={toggleDarkMode}>Toggle</button>
+        </div>
+        <div className={styles.card} key="contact">
+          <h2>Contact</h2>
+          <p>Email: example@example.com</p>
+        </div>
+        <div className={styles.card} key="socialMedia">
+          <h2>Social Media</h2>
+          <p>Links to social media.</p>
+        </div>
+      </ResponsiveGridLayout>
+    </div>
     </div>
   );
-}
+};
+
+export default PortfolioPage;
