@@ -1,0 +1,62 @@
+@property --a{
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 45deg;
+}
+
+body,
+body[data-theme="light"] {
+  --color-text-primary: #27201a;
+  --color-text-secondary: #076963;
+  --color-bg-primary: #610b0b;
+  --color-bg-toggle: #1e90ff;
+  --color-bg-one: #6F4C37;
+  --color-bg-two: #AB897D;
+  --color-bg-three: #E9E0D1;
+  --color-bg-four: #6F4C37;
+
+}
+
+body[data-theme="dark"] {
+  --color-text-primary: #e3e3e3;
+  --color-text-secondary: #ff6b00;
+  --color-bg-primary: #15232d;
+  --color-bg-toggle: #a9a9a9;
+  --color-bg-one: #80838B;
+  --color-bg-two: #ABA7B1;
+  --color-bg-three: #71757D;
+  --color-bg-four: #34393B;
+}
+
+body {
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: sans-serif;
+    transition: background 0.25s ease-in-out;
+  }
+  
+  h1 {
+    color: var(--color-text-secondary);
+  }
+
+  body {
+    background: linear-gradient(var(--a), var(--color-bg-one),var(--color-bg-two), var(--color-bg-three),var(--color-bg-four));
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    height: 100vh;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+      --a:45deg;
+    }
+    50% {
+      background-position: 100% 50%;
+      --a:-40deg;
+    }
+    100% {
+      background-position: 0% 50%;
+      --a:45deg;
+    }
+  }
