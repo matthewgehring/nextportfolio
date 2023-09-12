@@ -2,14 +2,15 @@
   border:1px solid black;
   border-radius: 1rem;
 }
-
-.grid{
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #ccc;
-  padding: 20px;
-  max-width: 50%;
+.gridPage{
+  opacity: 1; 
+  transform: none;
+}
+.gridContainer{
+  max-width: 1200px;
+  position: relative;
+  margin: -16px auto 0px;
+  padding-bottom: 80px;
 }
 .lightMode {
   background-color: #ffffff;
@@ -17,15 +18,6 @@
 }
 
 .darkMode {
-  background-color: #000000;
-  color: #ffffff;
-}
-.light-mode {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.dark-mode {
   background-color: #000000;
   color: #ffffff;
 }
