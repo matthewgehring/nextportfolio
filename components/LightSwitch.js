@@ -1,20 +1,31 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from '../styles/LightSwitch.module.css'; // Asumiendo que tienes un archivo CSS llamado IntroBox.module.css
 
 
 const LightSwitch = () => {
-  const [checked, setChecked] = useState(false);
+    const [checked, setChecked] = useState(false);
+    const [activeTheme, setActiveTheme] = useState("light");
+
+    useEffect(() => {
+        document.body.dataset.theme = activeTheme;
+    }, [activeTheme]);
+
+    const handleClick = () => {
+        setChecked(!checked)
+        const inactiveTheme = activeTheme === "light" ? "dark" : "light";
+        setActiveTheme(inactiveTheme)
+  }
 
   return (
     <div>
-    <span onClick={() => setChecked(!checked)}>
         <input type="checkbox" className={styles.lightswitch} />
-        <label for="lightswitch" className={styles.lightswitchlabel }>
+        <label className={ checked ? `${styles.lightswitchlabel} ${styles.off}` : styles.lightswitchlabel }>
             <div className={styles.screw}></div>
+    <span onClick={() => handleClick()}>
             <div className={checked ? styles.switch :  styles.switchOn}></div>
+        </span>
             <div className={styles.screw}></div>
         </label>
-        </span>
         </div>
   );
 };
