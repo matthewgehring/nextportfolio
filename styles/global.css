@@ -10,10 +10,10 @@ body[data-theme="light"] {
   --color-text-secondary: #076963;
   --color-bg-primary: #610b0b;
   --color-bg-toggle: #1e90ff;
-  --color-bg-one: #6F4C37;
-  --color-bg-two: #AB897D;
-  --color-bg-three: #E9E0D1;
-  --color-bg-four: #6F4C37;
+  --color-bg-one: #648596;
+  --color-bg-two: #7FAABF;
+  --color-bg-three: #9cc2d5;
+  --color-bg-four: #93b0cb;
 
 }
 
@@ -42,21 +42,21 @@ body {
   body {
     background: linear-gradient(var(--a), var(--color-bg-one),var(--color-bg-two), var(--color-bg-three),var(--color-bg-four));
     background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+    animation: gradient 20s ease infinite;
     height: 100vh;
   }
   
   @keyframes gradient {
     0% {
-      background-position: 0% 50%;
+      background-position: 49% 0%;
       --a:45deg;
     }
     50% {
-      background-position: 100% 50%;
+      background-position: 52% 100%;
       --a:-40deg;
     }
     100% {
-      background-position: 0% 50%;
+      background-position: 49% 0%;
       --a:45deg;
     }
   }

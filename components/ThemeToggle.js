@@ -48,7 +48,7 @@ const ThemeToggle = () => {
     return (
         <ToggleButton type="button" onClick={() => setActiveTheme(inactiveTheme)}>
         <ToggleThumb activeTheme={activeTheme} />
-        <LightSwitch />
+          <LightSwitch />
         </ToggleButton>
     );
 };

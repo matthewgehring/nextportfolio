@@ -116,8 +116,7 @@ const PortfolioPage = () => {
               <h2>Project 3</h2>
               <p>Description of project 3.</p>
             </div>
-            <div className={styles.card} key="darkModeToggle">
-              <h2>Dark Mode</h2>
+            <div className={`${styles.card} ${styles.darkModeToggle}`} key="darkModeToggle">
               <ThemeToggle/>
             </div>
             <div className={styles.card} key="contact">

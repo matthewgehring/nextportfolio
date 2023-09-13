@@ -12,6 +12,12 @@
   margin: -16px auto 0px;
   padding-bottom: 80px;
 }
+
+.darkModeToggle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* .lightMode {
   background-color: #ffffff;
   color: #000000;
