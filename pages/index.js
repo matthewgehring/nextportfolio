@@ -6,16 +6,12 @@ import styles from '../styles/Home.module.css'
 
 import ThemeToggle from "../components/ThemeToggle";
 import IntroBox from '../components/IntroBox';
+import Picture from '../components/Picture';
 import LightSwitch from '../components/LightSwitch';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const PortfolioPage = () => {
-  const [darkMode, setDarkMode] = useState(false);
   const [activeButton, setActiveButton] = useState('about');
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
@@ -31,7 +27,7 @@ const PortfolioPage = () => {
       { i: 'project2', x: 4, y: 1, w: 2, h: 2 },
       { i: 'project3', x: 0, y: 2,   w: 4, h: 1},
       { i: 'darkModeToggle', x: 6, y: 2, w: 2, h: 1},
-      { i: 'spotify', x: 0, y: 1, w: 2, h: 1 },
+      { i: 'spotify', x: 0, y: 1, w: 2, h: 1},
       { i: 'socialMedia', x: 2, y: 1, w: 2, h: 1 },
     ],
     projects:[
@@ -77,7 +73,7 @@ const PortfolioPage = () => {
   };
 
   return (
-    <div className={darkMode ? styles.darkMode : styles.lightMode}>
+    <div>
     <div className={styles.navbar}>
         <div>MG</div>
         <div className={styles.navButtons}>
@@ -100,43 +96,44 @@ const PortfolioPage = () => {
             rowHeight={280}
             isBounded={true}
             maxRows={12}
+            draggableHandle='.drag'
             >
-            <div className={styles.card} key="intro">
+            <div className={`${styles.card} drag`} key="intro">
               <IntroBox/>
             </div>
-            <div className={styles.card} key="project1">
+            <div className={`${styles.card} drag`} key="project1">
               <h2>Project 1</h2>
               <p>Description of project 1.</p>
             </div>
-            <div className={styles.card} key="project2">
+            <div className={`${styles.card} drag`} key="project2">
               <h2>Project 2</h2>
               <p>Description of project 2.</p>
             </div>
-            <div className={styles.card} key="project3">
+            <div className={`${styles.card} drag`} key="project3">
               <h2>Project 3</h2>
               <p>Description of project 3.</p>
             </div>
-            <div className={`${styles.card} ${styles.darkModeToggle}`} key="darkModeToggle">
+            <div className={`${styles.card} ${styles.darkModeToggle} drag`} key="darkModeToggle">
               <LightSwitch/>
             </div>
-            <div className={styles.card} key="contact">
+            <div className={`${styles.card} drag`} key="contact">
               <h2>Contact</h2>
               <p>Email: example@example.com</p>
             </div>
-            <div className={styles.card} key="socialMedia">
+            <div className={`${styles.card} drag`} key="socialMedia">
               <h2>Social Media</h2>
             </div>
-            <div className={styles.card} key="blog">
+            <div className={`${styles.card} drag`} key="blog">
               <h2>Blog</h2>
               <p>Links to blog.</p>
             </div>
-            <div className={styles.card} key="map">
+            <div className={`${styles.card} drag`} key="map">
               <h2>map</h2>
               <p>map</p>
             </div>
-            <div className={styles.card} key="spotify">
-              <h2>Spotify</h2>
-              <p>Spotify.</p>
+            <div id="picture" className={`${styles.card}`} key="spotify">
+              <h2 className='drag'>Picture</h2>
+              <Picture />
             </div>
           </ResponsiveGridLayout>
         </div>

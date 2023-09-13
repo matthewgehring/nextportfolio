@@ -1,0 +1,11 @@
+.canvasContainer {
+    position: relative;
+    background-image: url('../assets/photo.jpg');
+    background-size: cover;
+  }
+  
+  .drawCanvas {
+    position: absolute;
+    background-color: rgb(211, 27, 27);
+  }
+  

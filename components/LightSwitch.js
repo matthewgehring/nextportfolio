@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import styles from '../styles/LightSwitch.module.css'; // Asumiendo que tienes un archivo CSS llamado IntroBox.module.css
+import styles from '../styles/LightSwitch.module.css';
 
 
 const LightSwitch = () => {
