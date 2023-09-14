@@ -4,73 +4,27 @@ import { WidthProvider, Responsive } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styles from '../styles/Home.module.css'
-import IntroBox from '../components/IntroBox';
+import Hero from '../components/IntroBox';
 import Picture from '../components/Picture';
 import LightSwitch from '../components/LightSwitch';
 import Project from '../components/Project';
+import ProjectHorizontal from '../components/ProjectHorizontal';
 
+//layouts
+import Large from '../layouts/Large';
+import Small from '../layouts/Small';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const PortfolioPage = () => {
-  const [activeButton, setActiveButton] = useState('about');
+  const [activeButton, setActiveButton] = useState('home');
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
   };
 
-  const layoutDict = {
-    home:[
-      { i: 'intro', x: 0, y: 0, w: 4, h: 1 },
-      { i: 'map', x: 4, y: 0, w: 2, h: 1},
-      { i: 'contact', x: 0, y: 3, w: 4, h: 1},
-      { i: 'blog', x: 4, y: 3,w: 4, h: 1 },
-      { i: 'project1', x: 6, y: 0, w: 2, h: 2 },
-      { i: 'project2', x: 4, y: 1, w: 2, h: 2 },
-      { i: 'project3', x: 0, y: 2,   w: 4, h: 1},
-      { i: 'darkModeToggle', x: 6, y: 2, w: 2, h: 1},
-      { i: 'spotify', x: 0, y: 1, w: 2, h: 1},
-      { i: 'socialMedia', x: 2, y: 1, w: 2, h: 1 },
-    ],
-    projects:[
-      { i: 'intro', x: 0, y: 1, w: 4, h: 1 },
-      { i: 'map', x: 4, y: 2, w: 2, h: 1},
-      { i: 'contact', x: 0, y: 3, w: 4, h: 1},
-      { i: 'blog', x: 4, y: 3,w: 4, h: 1 },
-      { i: 'project1', x: 6, y: 0, w: 2, h: 2 },
-      { i: 'project2', x: 4, y: 0, w: 2, h: 2 },
-      { i: 'project3', x: 0, y: 0,   w: 4, h: 1},
-      { i: 'darkModeToggle', x: 6, y: 2, w: 2, h: 1},
-      { i: 'spotify', x: 0, y: 2, w: 2, h: 1 },
-      { i: 'socialMedia', x: 2, y: 2, w: 2, h: 1 },
-    ],
-    contact:[
-      { i: 'intro', x: 4, y: 0, w: 4, h: 1 },
-      { i: 'map', x: 4, y: 2, w: 2, h: 1},
-      { i: 'contact', x: 0, y: 0, w: 4, h: 1},
-      { i: 'blog', x: 0, y: 3,w: 4, h: 1 },
-      { i: 'project1', x: 6, y: 0, w: 2, h: 2 },
-      { i: 'project2', x: 4, y: 0, w: 2, h: 2 },
-      { i: 'project3', x: 0, y: 0,   w: 4, h: 1},
-      { i: 'darkModeToggle', x: 6, y: 2, w: 2, h: 1},
-      { i: 'spotify', x: 0, y: 2, w: 2, h: 1 },
-      { i: 'socialMedia', x: 2, y: 2, w: 2, h: 1 },
-    ],
-    about:[
-      { i: 'intro', x: 0, y: 0, w: 4, h: 1 },
-      { i: 'map', x: 4, y: 0, w: 2, h: 1},
-      { i: 'contact', x: 4, y: 1, w: 4, h: 1},
-      { i: 'blog', x: 0, y: 1,w: 4, h: 1 },
-      { i: 'project1', x: 6, y: 2, w: 2, h: 2 },
-      { i: 'project2', x: 4, y: 2, w: 2, h: 2 },
-      { i: 'project3', x: 0, y: 3,   w: 4, h: 1},
-      { i: 'darkModeToggle', x: 2, y: 2, w: 2, h: 1},
-      { i: 'spotify', x: 0, y: 2, w: 2, h: 1 },
-      { i: 'socialMedia', x: 6, y: 0, w: 2, h: 1 },
-    ]
-  }
-
   const layouts = {
-    lg: layoutDict[activeButton],
+    lg: Large[activeButton],
+    sm: Small[activeButton]
   };
 
   return (
@@ -91,7 +45,7 @@ const PortfolioPage = () => {
             layouts={layouts} 
             compactType='vertical'
             isResizable={false}
-            cols={{ lg: 20, md:8, s:6, xs:2  }}
+            cols={{ lg: 10, md:8, sm:6, xs:2  }}
             margin={[16,16]}
             containerPadding={[0,0]}
             rowHeight={280}
@@ -100,18 +54,17 @@ const PortfolioPage = () => {
             draggableHandle='.drag'
             >
             <div className={`${styles.card} drag`} key="intro">
-              <IntroBox />
+              <Hero />
             </div>
             <div className={`${styles.card} drag`} key="project1">
               <Project />
             </div>
             <div className={`${styles.card} drag`} key="project2">
-              <h2>Project 2</h2>
-              <p>Description of project 2.</p>
+            <Project />
+
             </div>
             <div className={`${styles.card} drag`} key="project3">
-              <h2>Project 3</h2>
-              <p>Description of project 3.</p>
+              <ProjectHorizontal/>
             </div>
             <div className={`${styles.card} ${styles.darkModeToggle} drag`} key="darkModeToggle">
               <LightSwitch/>
