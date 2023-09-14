@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+
 import { WidthProvider, Responsive } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import styles from '../styles/Home.module.css'
-
-import ThemeToggle from "../components/ThemeToggle";
 import IntroBox from '../components/IntroBox';
 import Picture from '../components/Picture';
 import LightSwitch from '../components/LightSwitch';
+import Project from '../components/Project';
+
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const PortfolioPage = () => {
@@ -90,7 +91,7 @@ const PortfolioPage = () => {
             layouts={layouts} 
             compactType='vertical'
             isResizable={false}
-            cols={{ lg: 20, md:8  }}
+            cols={{ lg: 20, md:8, s:6, xs:2  }}
             margin={[16,16]}
             containerPadding={[0,0]}
             rowHeight={280}
@@ -99,11 +100,10 @@ const PortfolioPage = () => {
             draggableHandle='.drag'
             >
             <div className={`${styles.card} drag`} key="intro">
-              <IntroBox/>
+              <IntroBox />
             </div>
             <div className={`${styles.card} drag`} key="project1">
-              <h2>Project 1</h2>
-              <p>Description of project 1.</p>
+              <Project />
             </div>
             <div className={`${styles.card} drag`} key="project2">
               <h2>Project 2</h2>

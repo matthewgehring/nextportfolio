@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import { render } from 'react-dom';
+import photo from '../assets/photo.jpg'
 
 import CanvasDraw from  'react-canvas-draw';
 import styles from '../styles/Picture.module.css';
 
 const Picture = () => {
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div className={styles.canvas} style={{ textAlign: 'center' }}>
         <CanvasDraw
-          brushColor="rgba(155,12,60,0.3)"
-          imgSrc="https://upload.wikimedia.org/wikipedia/commons/a/a1/Nepalese_Mhapuja_Mandala.jpg"
+          brushColor="rgba(155,12,60,1)"
+          imgSrc="https://i.imgur.com/5TBYh8W.png"
         />
     </div>
   );

@@ -1,6 +1,7 @@
 .card{
   border:1px solid black;
   border-radius: 1rem;
+  overflow:hidden;
 }
 .gridPage{
   opacity: 1; 
@@ -17,6 +18,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#picture{
+  overflow:hidden;
 }
 /* .lightMode {
   background-color: #ffffff;
