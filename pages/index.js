@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import { WidthProvider, Responsive } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
@@ -15,6 +14,52 @@ import Large from '../layouts/Large';
 import Small from '../layouts/Small';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
+const NavBar = ({activeButton, setActiveButton}) => {
+
+  const handleButtonClick = (buttonName) => {
+    setActiveButton(buttonName);
+  };
+
+  return (
+    <div className={styles.navbarContainer}>
+
+      <div className={styles.logo}>
+        <span>Logo</span>
+      </div>
+
+      <div className={styles.navbarButtons}>
+        <div 
+          className={`${styles.navButton} ${activeButton === 'home' ? styles.selected : ''}`}
+          onClick={() => handleButtonClick('home')}
+        >
+          Home
+        </div>
+        <div 
+          className={`${styles.navButton} ${activeButton === 'projects' ? styles.selected : ''}`}
+          onClick={() => handleButtonClick('projects')}
+        >
+          Projects
+        </div>
+        <div 
+          className={`${styles.navButton} ${activeButton === 'contact' ? styles.selected : ''}`}
+          onClick={() => handleButtonClick('contact')}
+        >
+          Contact
+        </div>
+        <div 
+          className={`${styles.navButton} ${activeButton === 'about' ? styles.selected : ''}`}
+          onClick={() => handleButtonClick('about')}
+        >
+          About
+        </div>
+      </div>
+      <div className={styles.buttonContainer}>
+
+    </div>
+    </div>
+  );
+};
+
 const PortfolioPage = () => {
   const [activeButton, setActiveButton] = useState('home');
 
@@ -29,15 +74,10 @@ const PortfolioPage = () => {
 
   return (
     <div>
-    <div className={styles.navbar}>
-        <div>MG</div>
-        <div className={styles.navButtons}>
-          <button onClick={() => handleButtonClick('home')}>Home</button>
-          <button onClick={() => handleButtonClick('projects')}>Projects</button>
-          <button onClick={() => handleButtonClick('contact')}>Contact</button>
-          <button onClick={() => handleButtonClick('about')}>About</button>
-        </div>
+      <div style={{ marginBottom: '50px' }}>
+        <NavBar activeButton={activeButton} setActiveButton={setActiveButton}/>
       </div>
+
     <div className={styles.gridPage}>
       <div className={styles.gridContainer}>
           <ResponsiveGridLayout 
