@@ -13,6 +13,11 @@ import Large from '../layouts/Large';
 import Small from '../layouts/Small';
 import Contact from '../components/Contact';
 import Blog from '../components/Blog';
+
+const projects = {
+  "selenite" : {"title": "Selenite Serpent", 
+                "description": "Custome ecommerce site built with NextJS, and Medusa CMS"}
+}
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const NavBar = ({activeButton, setActiveButton}) => {
@@ -97,7 +102,7 @@ const PortfolioPage = () => {
               <Hero />
             </div>
             <div className={`${styles.card} drag`} key="project1">
-              <Project />
+              <Project projectTitle={projects.selenite.title}  projectDescription={projects.selenite.description}/>
             </div>
             <div className={`${styles.card} drag`} key="project2">
             <Project />

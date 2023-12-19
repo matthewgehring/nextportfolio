@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
-import { Card, CardHeader, CardBody, CardFooter, Spacer } from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, CardFooter, Spacer, Center } from '@chakra-ui/react'
 import { Image, Heading, Stack, Text, Button, Divider, ButtonGroup} from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import { Icon } from '@chakra-ui/react'
+import { TbBrandNextjs } from "react-icons/tb";
 
+const ProjectHorizontal = ({imageSrc, projectDescription}) => {
 
-const Project = ({imageSrc, projectDescription}) => {
+  const router = useRouter();
+  const handleLearnMoreClick = () => {
+    router.push('/projects/projectDetails');
+
+  };
     return (
 <Card
   direction={{ base: 'column', sm: 'row' }}
@@ -19,25 +27,34 @@ const Project = ({imageSrc, projectDescription}) => {
     alt='Caffe Latte'
   />
 
-  <Stack>
+  <Stack p={0}>
     <CardBody>
-      <Heading size='lg'>The perfect latte</Heading>
+      <Heading size='lg'>My Portfolio</Heading>
 
       <Text py='2'>
-        Caffè latte is a coffee beverage of Italian origin made with espresso
-        and steamed milk.
+        Learn how I made this portfolio site.
       </Text>
+      <Icon  boxSize={20} as={TbBrandNextjs} />
+      <Divider variant='solid' color={'red.100'} w={'xl'}  />
+
+      <ButtonGroup paddingTop={3} spacing='3'>
+          <Button variant='solid' colorScheme='blue'>
+            Visit
+          </Button>
+          <Button variant='solid' colorScheme='purple' onClick={handleLearnMoreClick}>
+            Learn
+          </Button>
+          <Button variant='solid' colorScheme='green'>
+            GitHub
+          </Button>
+        </ButtonGroup>
+
     </CardBody>
 
-    <CardFooter>
-      <Button variant='solid' colorScheme='blue'>
-        Buy Latte
-      </Button>
-    </CardFooter>
   </Stack>
 </Card>
     )
 
 }
 
-export default Project;
+export default ProjectHorizontal;

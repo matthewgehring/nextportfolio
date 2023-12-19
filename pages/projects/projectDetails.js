@@ -74,7 +74,8 @@ const ProjectPage = () => {
           {/* Add more tools as needed */}
         </ul>
       </div>
-    </div>    </motion.div>
+    </div>    
+    </motion.div>
   );
 };
 

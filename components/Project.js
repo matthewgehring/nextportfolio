@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardBody, CardFooter, Spacer } from '@chakra-ui/react'
 import { Image, Heading, Stack, Text, Button, Divider, ButtonGroup} from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import { Icon } from '@chakra-ui/react'
+import { TbBrandNextjs } from "react-icons/tb";
 
-const Project = ({imageSrc, projectDescription}) => {
+const Project = ({projectTitle, imageSrc, projectDescription}) => {
 
   const router = useRouter();
 
@@ -20,20 +22,16 @@ const Project = ({imageSrc, projectDescription}) => {
           borderRadius='lg'
         />
         <Stack mt='8' mb='8' spacing='2'>
-          <Heading size='md'>Living room Sofa</Heading>
+          <Heading size='md'>{projectTitle}</Heading>
           <Text>
-            This sofa is perfect for modern tropical spaces, baroque inspired
-            spaces, earthy toned spaces and for people who love a chic design with a
-            sprinkle of vintage design.
+            {projectDescription}
           </Text>
           <Text color='blue.600' fontSize='2xl'>
-            Tools here
+          <Icon  boxSize={20} as={TbBrandNextjs} />
           </Text>
-        </Stack>
-      </CardBody>
-      <Divider />
-      <CardFooter>
-        <ButtonGroup spacing='3'>
+          <Divider variant='solid'/>
+
+          <ButtonGroup spacing='3'>
           <Button variant='solid' colorScheme='blue'>
             Visit
           </Button>
@@ -44,7 +42,9 @@ const Project = ({imageSrc, projectDescription}) => {
             GitHub
           </Button>
         </ButtonGroup>
-      </CardFooter>
+        </Stack>
+      </CardBody>
+
     </Card>
     )
 

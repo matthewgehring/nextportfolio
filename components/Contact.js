@@ -24,7 +24,7 @@ const Contact = () => {
     padding={3}
     style={{ height: '100%' }}
     >
-    <Heading size='md' paddingBottom={3}>Contact Me</Heading>
+    <Heading size='md' paddingBottom={3} >Contact Me</Heading>
       <FormControl as="form" ref={form} onSubmit={sendEmail}>
         <Flex gap={4} mb={4}>
           <Flex direction="column" flex={1}>
