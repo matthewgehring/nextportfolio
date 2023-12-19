@@ -8,7 +8,7 @@ const Large = {
       { i: 'project2', x: 4, y: 1, w: 2, h: 2 },
       { i: 'project3', x: 0, y: 2,   w: 4, h: 1},
       { i: 'darkModeToggle', x: 6, y: 2, w: 2, h: 1},
-      { i: 'spotify', x: 0, y: 1, w: 2, h: 1},
+      { i: 'git', x: 0, y: 1, w: 2, h: 1},
       { i: 'socialMedia', x: 2, y: 1, w: 2, h: 1 },
     ],
     projects:[
@@ -20,7 +20,7 @@ const Large = {
       { i: 'project2', x: 4, y: 0, w: 2, h: 2 },
       { i: 'project3', x: 0, y: 0,   w: 4, h: 1},
       { i: 'darkModeToggle', x: 6, y: 2, w: 2, h: 1},
-      { i: 'spotify', x: 0, y: 2, w: 2, h: 1 },
+      { i: 'git', x: 0, y: 2, w: 2, h: 1 },
       { i: 'socialMedia', x: 2, y: 2, w: 2, h: 1 },
     ],
     contact:[
@@ -32,7 +32,7 @@ const Large = {
       { i: 'project2', x: 4, y: 0, w: 2, h: 2 },
       { i: 'project3', x: 0, y: 0,   w: 4, h: 1},
       { i: 'darkModeToggle', x: 6, y: 2, w: 2, h: 1},
-      { i: 'spotify', x: 0, y: 2, w: 2, h: 1 },
+      { i: 'git', x: 0, y: 2, w: 2, h: 1 },
       { i: 'socialMedia', x: 2, y: 2, w: 2, h: 1 },
     ],
     about:[
@@ -44,7 +44,7 @@ const Large = {
       { i: 'project2', x: 4, y: 2, w: 2, h: 2 },
       { i: 'project3', x: 0, y: 3,   w: 4, h: 1},
       { i: 'darkModeToggle', x: 2, y: 2, w: 2, h: 1},
-      { i: 'spotify', x: 0, y: 2, w: 2, h: 1 },
+      { i: 'git', x: 0, y: 2, w: 2, h: 1 },
       { i: 'socialMedia', x: 6, y: 0, w: 2, h: 1 },
     ]
   }

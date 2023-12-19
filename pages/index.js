@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { WidthProvider, Responsive } from 'react-grid-layout';
-import 'react-grid-layout/css/styles.css';
-import 'react-resizable/css/styles.css';
+
 import styles from '../styles/Home.module.css'
 import Hero from '../components/IntroBox';
-import Picture from '../components/Picture';
+import MapPop from '../components/Map';
 import LightSwitch from '../components/LightSwitch';
 import Project from '../components/Project';
+import SocialMedia from '../components/SocialMedia';
 import ProjectHorizontal from '../components/ProjectHorizontal';
 
-//layouts
 import Large from '../layouts/Large';
 import Small from '../layouts/Small';
+import Contact from '../components/Contact';
+import Blog from '../components/Blog';
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const NavBar = ({activeButton, setActiveButton}) => {
@@ -24,7 +25,7 @@ const NavBar = ({activeButton, setActiveButton}) => {
     <div className={styles.navbarContainer}>
 
       <div className={styles.logo}>
-        <span>Logo</span>
+
       </div>
 
       <div className={styles.navbarButtons}>
@@ -91,7 +92,6 @@ const PortfolioPage = () => {
             rowHeight={280}
             isBounded={true}
             maxRows={12}
-            draggableHandle='.drag'
             >
             <div className={`${styles.card} drag`} key="intro">
               <Hero />
@@ -110,23 +110,24 @@ const PortfolioPage = () => {
               <LightSwitch/>
             </div>
             <div className={`${styles.card} drag`} key="contact">
-              <h2>Contact</h2>
-              <p>Email: example@example.com</p>
+              <Contact />
             </div>
-            <div className={`${styles.card} drag`} key="socialMedia">
-              <h2>Social Media</h2>
-            </div>
+            <div id="linkedin" className={`${styles.card} drag`} key="socialMedia">
+            <SocialMedia
+              imageUrl="./assets/linkedin.png"
+              linkUrl="https://www.yourwebsite.com"
+            />            </div>
             <div className={`${styles.card} drag`} key="blog">
-              <h2>Blog</h2>
-              <p>Links to blog.</p>
+              <Blog></Blog>
             </div>
             <div className={`${styles.card} drag`} key="map">
-              <h2>map</h2>
-              <p>map</p>
+              <MapPop />
             </div>
-            <div id="picture" className={`${styles.card}`} key="spotify">
-              <h2 className='drag'>Picture</h2>
-              <Picture />
+            <div id="git" className={`${styles.card} drag`} key="git">
+            <SocialMedia
+              imageUrl="./assets/github.png"
+              linkUrl="https://www.yourwebsite.com"
+            />   
             </div>
           </ResponsiveGridLayout>
         </div>

@@ -19,18 +19,11 @@ export default function Hero() {
     <Flex p={0} m={0} flex={1} align={'center'} justify={'center'} w="100%">
       <HStack spacing={2} w="100%" p={0} m={0}>
         <Stack spacing={2} w={{ base: 'full', md: '50%' }} p={4} m={0}>
-          <Heading justify={'center'} align={'center'} fontSize={{ base: '1xl', md: '2xl', lg: '1xl' }}>
-            <Text color={'blue.500'} as={'span'}>
-              Matthew Gehring
-            </Text>{' '}
-            <br />{' '}
-            <Text color={'blue.300'} as={'span'}>
-              Web Developer
-            </Text>{' '}
-          </Heading>
-          <Text fontSize={{ base: 'sm', lg: 'sm' }} color={'gray.500'}>
-            I'm a full stack developer living in San Francisco. My expertise is in building user-friendly, efficient, and innovative React, NextJS, and NodeJS applications. 
-            Outside of coding, my interests extend to music production and language learning. Let's collaborate to build something impactful.
+          <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'} >
+            I'm <Text color={'blue.200'} as={'span'} fontSize={{ base: 'xl', lg: 'xl' }}>
+              Matthew
+            </Text>, a SF based full stack developer. I excel at creating user-friendly, efficient, and innovative React, NextJS, and NodeJS applications. 
+            Outside of coding, my interests extend to music production and language learning. Let's build something impactful together.
           </Text>
         </Stack>
         <Flex flex={1} p={0} m={0} w="100%">

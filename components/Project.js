@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardBody, CardFooter, Spacer } from '@chakra-ui/react'
 import { Image, Heading, Stack, Text, Button, Divider, ButtonGroup} from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+
 const Project = ({imageSrc, projectDescription}) => {
+
+  const router = useRouter();
+
+  const handleLearnMoreClick = () => {
+    router.push('/projects/projectDetails');
+
+  };
     return (
     <Card size={'lg'}>
       <CardBody>
@@ -28,7 +37,7 @@ const Project = ({imageSrc, projectDescription}) => {
           <Button variant='solid' colorScheme='blue'>
             Visit
           </Button>
-          <Button variant='solid' colorScheme='purple'>
+          <Button variant='solid' colorScheme='purple' onClick={handleLearnMoreClick}>
             Learn
           </Button>
           <Button variant='solid' colorScheme='green'>

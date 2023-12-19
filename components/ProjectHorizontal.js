@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardBody, CardFooter, Spacer } from '@chakra-ui/react'
 import { Image, Heading, Stack, Text, Button, Divider, ButtonGroup} from '@chakra-ui/react';
+
+
 const Project = ({imageSrc, projectDescription}) => {
     return (
 <Card
   direction={{ base: 'column', sm: 'row' }}
   overflow='hidden'
   size={'lg'}
+  borderRadius='25'
+  style={{ height: '100%' }}
 >
   <Image
     objectFit='cover'

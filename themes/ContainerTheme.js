@@ -1,9 +1,10 @@
-
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
 // define styles for custom variant
 const colorfulVariant = defineStyle((props) => {
   return {
+    fontFamily: 'Geomatrica, mono',
+    fontSize: 'sm',
     _light: {
       bg: 'white',
       color: 'green',
@@ -17,7 +18,7 @@ const colorfulVariant = defineStyle((props) => {
 
 const boldVariant = defineStyle((props) => {
   return {
-    fontFamily: 'mono',
+    fontFamily: 'Geomatrica, mono', // Updated to use Geomatrica font
     _light: {
       bg: 'white',
       color: `black`,

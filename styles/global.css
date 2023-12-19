@@ -4,11 +4,23 @@
   initial-value: 45deg;
 }
 
+@font-face {
+  font-family: 'Geomatrica';
+  src: url('/fonts/Geomatrica.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Geomatrica-Outline';
+  src: url('/fonts/Geomatrica-Outline.otf') format('opentype');
+}
+
+
+
 body,
 body[data-theme="light"] {
   --color-text-primary: #27201a;
   --color-text-secondary: #076963;
-  --color-bg-primary: #610b0b;
+  --color-bg-primary: #fafafa;
   --color-bg-toggle: #1e90ff;
   --color-bg-one: #648596;
   --color-bg-two: #7FAABF;
@@ -31,7 +43,7 @@ body[data-theme="dark"] {
 body {
     background: var(--color-bg-primary);
     color: var(--color-text-primary);
-    font-family: sans-serif;
+    font-family:  sofia-pro, sans-serif;
     transition: background 0.25s ease-in-out;
   }
   
@@ -39,24 +51,16 @@ body {
     color: var(--color-text-secondary);
   }
 
-  body {
-    background: linear-gradient(var(--a), var(--color-bg-one),var(--color-bg-two), var(--color-bg-three),var(--color-bg-four));
-    background-size: 400% 400%;
-    animation: gradient 20s ease infinite;
-    height: 100vh;
-  }
   
-  @keyframes gradient {
-    0% {
-      background-position: 49% 0%;
-      --a:45deg;
-    }
-    50% {
-      background-position: 52% 100%;
-      --a:-40deg;
-    }
-    100% {
-      background-position: 49% 0%;
-      --a:45deg;
-    }
+
+
+  .react-grid-item.react-grid-placeholder {
+    background: gray;
+    border-radius: 2rem;
+
   }
+/* slightly elevates cards on hover */
+  /* .react-grid-item:hover {
+    top: -1px;
+    box-shadow: 0px 8px 15px 0px #3e3e3e33;
+  } */
