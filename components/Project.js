@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardBody, CardFooter, Spacer } from '@chakra-ui/react'
-import { Image, Heading, Stack, Text, Button, Divider, ButtonGroup} from '@chakra-ui/react';
+import { Img, Heading, Stack, Text, Button, Divider, ButtonGroup} from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { Icon } from '@chakra-ui/react'
 import { TbBrandNextjs } from "react-icons/tb";
+import Image from 'next/image'
 
-const Project = ({projectTitle, imageSrc, projectDescription}) => {
+const Project = ({projectTitle, image, projectDescription}) => {
 
   const router = useRouter();
 
@@ -17,7 +18,7 @@ const Project = ({projectTitle, imageSrc, projectDescription}) => {
     <Card size={'lg'}>
       <CardBody>
         <Image
-          src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+          src={image}
           alt='Green double couch with wooden legs'
           borderRadius='lg'
         />

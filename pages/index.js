@@ -13,11 +13,17 @@ import Large from '../layouts/Large';
 import Small from '../layouts/Small';
 import Contact from '../components/Contact';
 import Blog from '../components/Blog';
+import seleniteImage from '../public/assets/selenite.png';
 
 const projects = {
   "selenite" : {"title": "Selenite Serpent", 
-                "description": "Custome ecommerce site built with NextJS, and Medusa CMS"}
-}
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+                "image" : seleniteImage},
+  "levrum" : {
+                "title": "Levrum Technologies", 
+                "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"}
+  }
+
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const NavBar = ({activeButton, setActiveButton}) => {
@@ -102,10 +108,10 @@ const PortfolioPage = () => {
               <Hero />
             </div>
             <div className={`${styles.card} drag`} key="project1">
-              <Project projectTitle={projects.selenite.title}  projectDescription={projects.selenite.description}/>
+              <Project projectTitle={projects.selenite.title}  projectDescription={projects.selenite.description} image={projects.selenite.image}/>
             </div>
             <div className={`${styles.card} drag`} key="project2">
-            <Project />
+            <Project projectTitle={projects.levrum.title}  projectDescription={projects.levrum.description} image={projects.selenite.image} />
 
             </div>
             <div className={`${styles.card} drag`} key="project3">
