@@ -97,7 +97,7 @@ const PortfolioPage = () => {
             layouts={layouts} 
             compactType='vertical'
             isResizable={false}
-            cols={{ lg: 10, md:8, sm:6, xs:2  }}
+            cols={{ lg: 10, md: 8, sm: 6, xs: 2, xxs: 1 }} 
             margin={[16,16]}
             containerPadding={[0,0]}
             rowHeight={280}
