@@ -18,7 +18,7 @@ import seleniteImage from '../public/assets/selenite.png';
 const projects = {
   "selenite" : {"title": "Selenite Serpent", 
                 "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-                "image" : seleniteImage},
+                "image" : seleniteImage.src},
   "levrum" : {
                 "title": "Levrum Technologies", 
                 "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"}
