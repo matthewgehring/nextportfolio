@@ -14,7 +14,7 @@
 .navbarButtons {
   display: flex;
   justify-content: center; /* Center the buttons */
-  background-color: #ffffff; /* Original background color */
+  background-color: #d4d2d2; /* Original background color */
   border-radius: 20px; /* Maintain the original rounded corners */
   flex-shrink: 0;
   padding: 5px; /* Add some padding to space the buttons inside the container */
