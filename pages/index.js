@@ -8,6 +8,7 @@ import LightSwitch from '../components/LightSwitch';
 import Project from '../components/Project';
 import SocialMedia from '../components/SocialMedia';
 import ProjectHorizontal from '../components/ProjectHorizontal';
+import { useBreakpointValue } from '@chakra-ui/react';
 
 import Large from '../layouts/Large';
 import Small from '../layouts/Small';
@@ -27,18 +28,13 @@ const projects = {
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const NavBar = ({activeButton, setActiveButton}) => {
-
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
   };
 
   return (
     <div className={styles.navbarContainer}>
-
-      <div className={styles.logo}>
-
-      </div>
-
+      {/* Render buttons, centered */}
       <div className={styles.navbarButtons}>
         <div 
           className={`${styles.navButton} ${activeButton === 'home' ? styles.selected : ''}`}
@@ -65,9 +61,6 @@ const NavBar = ({activeButton, setActiveButton}) => {
           About
         </div>
       </div>
-      <div className={styles.buttonContainer}>
-
-    </div>
     </div>
   );
 };
@@ -81,7 +74,9 @@ const PortfolioPage = () => {
 
   const layouts = {
     lg: Large[activeButton],
-    sm: Small[activeButton]
+    md: Large[activeButton],
+    sm: Small[activeButton],
+    xs: Small[activeButton],
   };
 
   return (
@@ -97,7 +92,7 @@ const PortfolioPage = () => {
             layouts={layouts} 
             compactType='vertical'
             isResizable={false}
-            cols={{ lg: 10, md: 8, sm: 6, xs: 2, xxs: 1 }} 
+            cols={{ lg: 8, md: 8, sm: 4, xs: 4, xxs: 4 }} 
             margin={[16,16]}
             containerPadding={[0,0]}
             rowHeight={280}

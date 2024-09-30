@@ -1,3 +1,66 @@
+.navbarContainer {
+  display: flex;
+  justify-content: center; /* Center the content inside the navbar */
+  align-items: center;
+  height: 60px; /* Maintain the original height */
+  max-width: 100%; /* Full width */
+  margin: 0 auto; /* Center the container */
+}
+
+.buttonContainer {
+  /* You can leave this as it was if you plan to use it later */
+}
+
+.navbarButtons {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  background-color: #ffffff; /* Original background color */
+  border-radius: 20px; /* Maintain the original rounded corners */
+  flex-shrink: 0;
+  padding: 5px; /* Add some padding to space the buttons inside the container */
+  max-width: 30%; /* Original max-width for the button group */
+}
+
+.navButton {
+  flex: 1; /* Ensure each button takes equal space */
+  padding: 10px; /* Padding for spacing */
+  text-align: center;
+  cursor: pointer;
+  border-radius: 20px; /* Rounded corners for buttons */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.navButton:hover {
+  background-color: #bbb; /* Hover effect color */
+}
+
+.navButton.selected {
+  background-color: #999; /* Selected button color */
+  border-radius: 20px; /* Maintain rounded corners for selected button */
+}
+
+.logo {
+  position: absolute;
+  left: 10px; /* Keep the logo aligned left */
+  text-align: left;
+  padding-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .navbarContainer {
+    padding: 10px 5px; /* Reduce padding on smaller screens */
+  }
+
+  .navbarButtons {
+    max-width: 80%; /* Allow more space for buttons on smaller screens */
+  }
+
+  .navButton {
+    padding: 8px 10px; /* Slightly smaller padding on mobile */
+  }
+}
+
+
 .card{
   /* border:1px solid black; */
   border-radius: 2rem;
@@ -34,46 +97,5 @@
   background-color: #000000;
   color: #ffffff;
 } */
-
-.navbarContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  margin: 0 auto; 
-  max-width: 100%;
-}
-
-
-.buttonContainer {
-
-}
-
-.navbarButtons {
-  display: flex;
-  background-color: #ccc;
-  border-radius: 20px;
-  max-width: 30%;
-  flex: 2;
-}
-
-.navButton {
-  flex: 1;
-  padding: 10px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.navButton.selected {
-  background-color: #999;
-  border-radius: 20px;
-
-}
-
-.logo {
-
-  text-align: left;
-  padding-right: 20px;
-}
 
 
